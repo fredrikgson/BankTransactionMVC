@@ -19,3 +19,8 @@ It is also possible to assign categories directly to specific transactions. If a
 ![Listing transactions](screenshots/list_transactions.png)
 
 ![Summation report](screenshots/summation_report.png)
+
+<p align="center">
+  <img src="screenshots/list_transactions.png" width="350" title="List transactions">
+  <img src="screenshots/summation_report.png" width="350" title="Summation report">
+</p>
