@@ -16,11 +16,7 @@ This is an application that manages bank transactions and enables features such 
 It is also possible to assign categories directly to specific transactions. If a category is assigned this way, it will *always* supersede any categorization rules by reference value (defined using the **Manage categorization** feature).
 
 #### Screenshots
-![Listing transactions](screenshots/list_transactions.png)
-
-![Summation report](screenshots/summation_report.png)
-
 <p align="center">
-  <img src="screenshots/list_transactions.png" width="350" title="List transactions">
-  <img src="screenshots/summation_report.png" width="350" title="Summation report">
+  <img src="screenshots/list_transactions.png" height="350" title="List transactions">
+  <img src="screenshots/summation_report.png" height="350" title="Summation report">
 </p>
