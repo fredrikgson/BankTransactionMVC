@@ -1,0 +1,19 @@
+@{ ViewData["Title"] = "Error"; }
+
+<h1>Error</h1>
+
+<div>
+    @Html.ActionLink("Back", "ListTransactions")
+</div>
+
+<hr />
+<h5 style="color: darkred">An error occurred</h5>
+<br />
+<p>@Model</p>
+
+
+@*
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+*@

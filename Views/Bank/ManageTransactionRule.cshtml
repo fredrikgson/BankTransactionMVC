@@ -1,0 +1,34 @@
+@{ ViewData["Title"] = "ManageTransactionRule"; }
+
+@* KATEGORI FÖR ENSKILDA TRANSAKTIONER *@
+
+<h1>Manage transaction</h1>
+
+<div>
+    @Html.ActionLink("Back", "ListTransactions")
+</div>
+
+<div style='margin-top: 20px'>
+    <h4>Edit transaction</h4>
+    <hr />
+    <div class="row">
+        <div class="col -md -4">
+            <form asp -action="Edit">
+                <div asp -validation -summary="ModelOnly" class="text -danger"></div>
+
+                <div class="form -group">
+                    <label asp -for="id" class="control -label"></label>
+                    <input asp -for="id" class="form -control" />
+                    <span asp -validation -for="id" class="text -danger"></span>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+        @*
+            @section Scripts {
+                @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+            }
+        *@

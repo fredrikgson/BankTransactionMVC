@@ -1,0 +1,71 @@
+@{ ViewData["Title"] = "SummationReport"; }
+
+<h1>Summation report</h1>
+
+<div>
+    @Html.ActionLink("Back", "ListTransactions")
+</div>
+
+<hr />
+<h5>Total revenue and expenditure</h5>
+
+<table style="margin-top: 20px">
+    <thead>
+        <tr>
+            <td style="min-width: 200px"><strong>Revenue</strong></td>
+            <td style="min-width: 200px"><strong>Expenditure</strong></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="color: darkgreen">@Model.Item1</td>
+            <td style="color: darkred">@Model.Item2</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr />
+<h5>Revenue and expenditure by category</h5>
+
+<table style="margin-top: 20px">
+    <thead>
+        <tr>
+            <td style="min-width: 200px"><strong>Category</strong></td>
+            <td style="min-width: 200px"><strong>Revenue</strong></td>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var item in Model.Item3)
+            {
+                <tr>
+                    <td>@item.Key</td>
+                    <td style="color: darkgreen">@item.Value</td>
+                </tr>
+            }
+    </tbody>
+</table>
+
+<table style="margin-top: 20px">
+    <thead>
+        <tr>
+            <td style="min-width: 200px"><strong>Category</strong></td>
+            <td style="min-width: 200px"><strong>Expenditure</strong></td>
+        </tr>
+    </thead>
+    <tbody>
+        
+            @foreach (var item in Model.Item4)
+            {
+                <tr>
+                    <td>@item.Key</td>
+                    <td style="color: darkred">@item.Value</td>
+                </tr>
+            }
+    </tbody>
+</table>
+
+@*
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+*@

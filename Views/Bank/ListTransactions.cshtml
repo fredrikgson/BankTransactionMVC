@@ -1,0 +1,85 @@
+@{ ViewData["Title"] = "ListTransactions"; }
+
+
+<div id="wrapper">
+    <h1>Transactions</h1>
+
+    <div>
+        @Html.ActionLink("Back", "Index")
+    </div>
+    <div>
+        @Html.ActionLink("Reload transactions", "ReloadTransactions")
+    </div>
+    <div>
+        @Html.ActionLink("Manage categories", "ManageCategories")
+    </div>
+    <div>
+        @Html.ActionLink("Manage categorization", "ManageReferenceRules")
+    </div>
+    <div>
+        @Html.ActionLink("Summation report", "SummationReport")
+    </div>
+
+    <h5>
+        <marquee>These are your transactions at StuxBank</marquee>
+    </h5>
+
+        <table style="border: 1px solid">
+            <thead>
+                <tr>
+                    <td class="table-header">ID</td>
+                    <td class="table-header">Reference</td>
+                    <td class="table-header">Amount</td>
+                    <td class="table-header">Transaction date</td>
+                    <td class="table-header">Booking date</td>
+                    <td class="table-header">Account balance</td>
+                    <td class="table-header">Category</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Item1)
+                {
+                    <form asp-action="ApplyCategory">
+                        <input type="hidden" name="transactionId" value="@item.TransactionID" />
+                        <tr>
+                            <td>@item.TransactionID</td>
+                            <td>@item.Reference</td>
+                            <td>@item.Amount</td>
+                            <td>@item.TransactionDate</td>
+                            <td>@item.BookingDate</td>
+                            <td>@item.Balance</td>
+                            <td>@item.Category</td>
+                            <td>
+                                    <select name="category", id="category">
+                                        @foreach(var cat in Model.Item2)
+                                        {
+                                            <option vaue="@cat">@cat</option>
+                                        }
+                                    </select>
+                                    <input type="submit" value="Assign"/>
+                            </td>
+                        </tr>
+                </form>
+                }
+
+            </tbody>
+        </table>
+</div>
+
+<style>
+    .table-header {
+        font-weight: bold;
+    }
+    td {
+        min-width: 150px;
+    }
+    tr {
+        border: 1px solid;
+    }
+</style>
+
+@*
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+*@

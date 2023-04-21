@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "ManageCategories";
+}
+
+<h1>Manage categories</h1>
+
+<div>
+    @Html.ActionLink("Back", "ListTransactions")
+</div>
+
+<div style='margin-top: 20px'>
+    <hr />
+    <h4>Add a category</h4>
+
+    <form asp-action="AddCategory">
+        <input name="newCategory"/>
+        <input type="submit"/>
+    </form>
+
+</div>
+<div style='margin-top: 20px'>
+    <hr />
+    <h4>Categories</h4>
+
+    <ul>
+        @foreach(var item in Model)
+        {
+            <li>@item</li>
+        }
+    </ul>
+
+</div>
+
+    @*
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }
+    *@
