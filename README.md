@@ -4,6 +4,8 @@ An ASP.NET Core MVC application for a university project that enables categoriza
 ### The application
 This is an application that manages bank transactions and enables features such as categorization and summation of these transactions. It is developed using ASP.NET Core and covers UI, backend processing as well as database communication.
 
+The application will display to the user all transactions that are stored in the program's database. If there are no transactions stored (as will be the case on first launch), the application will request the transactions from the external API and write them to the database, so that they can be displayed to the user. The user also has the option to manually fetch the transactions from the external API.
+
 ### Features
 **Reload transactions** - If there is any transaction data in the database, this is what will be displayed to the user. The **reload transactions** feature will clear the database of any transactions and fetch updated transaction data from the external API and write it to the database, thus allowing the user to update in case of any new transactions. Fetching data from the API will not overwrite any user-defined categorization.
 
